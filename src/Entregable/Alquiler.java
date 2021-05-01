@@ -2,6 +2,7 @@ package Entregable;
 
 import java.time.Duration;
 import java.time.LocalDate;
+import static java.time.temporal.ChronoUnit.DAYS;
 
 public class Alquiler implements Contratable {
 	
@@ -12,15 +13,16 @@ public class Alquiler implements Contratable {
 	
 	
 	
-	public Alquiler(Herramienta herramienta, LocalDate fechaIni, LocalDate fechaFin) {
+	public Alquiler(Herramienta herramienta, LocalDate fechaIni, LocalDate fechaFin, LocalDate fechaDev) {
 		super();
 		this.herramienta = herramienta;
 		this.fechaIni = fechaIni;
 		this.fechaFin = fechaFin;
+		this.fechaDev = fechaDev;
 	}
 	
 	
-	public void Devolver(LocalDate fechaDev) {
+	public void setFechaDev(LocalDate fechaDev) {
 		this.fechaDev = fechaDev;
 	}
 	
@@ -36,11 +38,10 @@ public class Alquiler implements Contratable {
 	 */
 	@Override
 	public double costo() {
-		return herramienta.getCostoDia()* Duration.between(fechaFin, fechaDev).toDays();
-				
-				//(int)fechaIni.until(fechaDev,days)
-				//(this.fechaDev - this.fechaIni);
-		
+		if (fechaDev==null) {return 0;}
+		else {
+		return herramienta.getCostoDia()*DAYS.between(fechaIni, fechaDev);}
+			//return herramienta.getCostoDia()*Duration.between(fechaIni, fechaDev).toDays();}
 	}
 	
 	/*

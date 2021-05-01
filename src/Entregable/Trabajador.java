@@ -112,7 +112,7 @@ public class Trabajador {
 	
 	//Asignar Servicio Personalizado
 	public void asignarTrabajo(Oficio oficio, boolean urgente, double pres,
-			double valorM, double valorT, LocalDate fechaIni) throws OficioNoCoincideException, AgendaOcupadaException {
+			double valorM, double valorT, LocalDate fechaIni, Usuario usr) throws OficioNoCoincideException, AgendaOcupadaException {
 		if (this.oficio == oficio) {
 			for (int i=0; i< this.trabajos.size();i++) {
 					if(this.trabajos.get(i).getFechaIni().equals(fechaIni)) {
@@ -121,6 +121,7 @@ public class Trabajador {
 			
 			ServicioPersonalizado s1= new ServicioPersonalizado(oficio, this, urgente,fechaIni,pres,valorM,valorT);
 			this.trabajos.add(s1);
+			usr.contratar(s1,"serv");
 			System.out.println("El "+ this.getOficio()+" "+this.getNombre()+" realizará el trabajo asignado el día "+fechaIni);}
 		else {throw new OficioNoCoincideException();}
 			

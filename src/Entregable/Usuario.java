@@ -7,6 +7,7 @@ import Entregable.Trabajador.Oficio;
 import Excepciones.AlquilerNoEntregadoException;
 
 public class Usuario {
+	private static final String Alquiler = null;
 	private	String nombre;
 	private ArrayList<Contratable> contratados;
 
@@ -58,6 +59,16 @@ public class Usuario {
 	public void verContratados() {
 		for (int i=0; i< this.contratados.size();i++) {
 			this.contratados.get(i).getDescripcion();
+			System.out.println("Costo: $"+this.contratados.get(i).costo());
+		}
+	}
+	
+	public void devolver(LocalDate dev) {
+		for (int i=0; i< this.contratados.size();i++) {
+			if (this.contratados.get(i).sinDevolver()) {
+				Alquiler a=(Entregable.Alquiler) this.contratados.get(i);
+				a.setFechaDev(dev);}
+			
 		}
 	}
 	

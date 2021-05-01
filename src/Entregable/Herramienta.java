@@ -37,8 +37,8 @@ public class Herramienta {
 	}
 	
 	
-	public void alquilar(LocalDate fechaIni, LocalDate fechaFin, Usuario usr){
-		Alquiler a1 = new Alquiler(this,fechaIni,fechaFin);
+	public void alquilar(LocalDate fechaIni, LocalDate fechaFin, LocalDate fechaDev, Usuario usr){
+		Alquiler a1 = new Alquiler(this,fechaIni,fechaFin, fechaDev);
 		usr.contratar(a1,"alq");
 	}
 	

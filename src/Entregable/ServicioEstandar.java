@@ -14,9 +14,6 @@ public class ServicioEstandar extends Servicio implements Contratable {
 		this.precioRF = precioRF;
 	}
 
-
-
-
 	/*
 	 * En los servicios estándares se cobra un monto fijo, definido por ReparaFix 
 	 * para ese servicio más el plus que cobre el profesional seleccionado.
