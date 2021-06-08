@@ -21,7 +21,8 @@ public class App {
 		Herramienta h10 = new Herramienta("Sierra", 610);
 		Herramienta h11 = new Herramienta("Contenedor", 3060);
 		Herramienta h12 = new Herramienta("Balde", 300);
-				
+		Herramienta h14 = new Herramienta("Fratacho", 300);
+		
 		Trabajador t1 = new Trabajador("Gonzalez",Oficio.PINTOR, 65, 0.30);
 		Trabajador t2 = new Trabajador("Perez", Oficio.ALBAÑIL, 35, 0.30);
 		Trabajador t3 = new Trabajador("Acevedo", Oficio.ELECTRICISTA, 45, 0.25);
